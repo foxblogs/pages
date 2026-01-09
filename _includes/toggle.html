@@ -1,0 +1,40 @@
+<!-- _includes/toggle.html -->
+<button id="theme-toggle" aria-label="Toggle dark/light mode">
+  <span id="theme-icon">🌙</span>
+</button>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+
+  function setTheme(dark) {
+    if (dark) {
+      document.documentElement.classList.add('dark');
+      icon.textContent = '☀️';
+    } else {
+      document.documentElement.classList.remove('dark');
+      icon.textContent = '🌙';
+    }
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+
+  // init
+  const stored = localStorage.getItem('theme');
+  if (stored) setTheme(stored === 'dark');
+  else setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  btn.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+</script>
+
+<style>
+  /* Add minimal CSS for the toggle button */
+  #theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: .5rem;
+    cursor: pointer;
+  }
+</style>
