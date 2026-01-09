@@ -9,9 +9,9 @@ url: "https://foxblogs.github.io/pages" # the base hostname & protocol for your 
 site-twitter: # if your site has a twitter account, enter it here
 
 # Author Settings
-author: Kitsune # add your name
+author: Kitsune Blog # add your name
 author-img: logo.jpg # add your photo
-about-author: # add description
+about-author: writing about people, projects, and places # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github:  # add your Github handle
